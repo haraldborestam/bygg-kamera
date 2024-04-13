@@ -22,7 +22,7 @@
     /*Den här delen är till för att identifiera den 
     senaste uppladdade bilden i img-mappen*/
 
-    $dir = "img"; //$dir är en variabel, den kan lika gärna heta $bajs.
+    $dir = "img"; //$dir är en variabel, den kan lika gärna heta $hejhej.
 
     $files = glob($dir . "/*.*");
     usort($files, function($a, $b){
