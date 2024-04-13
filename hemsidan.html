@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Se live feed from the bygget</h1>
+	hello
+	<br>
+	<br>
+
+function refresh(node)
+{
+   var times = 3000; // gap in Milli Seconds;
+
+   (function startRefresh()
+   {
+      var address;
+      if(node.src.indexOf('?')>-1)
+       address = node.src.split('?')[0];
+      else 
+       address = node.src;
+      node.src = address+"?time="+new Date().getTime();
+
+      setTimeout(startRefresh,times);
+   })();
+
+}
+
+window.onload = function()
+{
+  var node = document.getElementById('img');
+  refresh(node);
+  // you can refresh as many images you want just repeat above steps
+}
+
+</body>
+</html>
